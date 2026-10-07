@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sahay</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <div>
+      <h1>Sahay</h1>
+      <p id="site" class="site">Looking at this tab</p>
+    </div>
+  </div>
+  <nav class="tools" aria-label="Sahay tools">
+    <button id="newChat" class="icon" type="button" title="New conversation" aria-label="New conversation"></button>
+    <button id="historyToggle" class="icon" type="button" title="Past conversations on this site" aria-label="Past conversations" aria-expanded="false" aria-controls="history"></button>
+    <button id="settingsToggle" class="icon" type="button" title="Settings" aria-label="Settings" aria-expanded="false" aria-controls="settings"></button>
+  </nav>
+</header>
+
+<section id="history" class="sheet" hidden>
+  <h2>Past conversations on <span id="historySite">this site</span></h2>
+  <ul id="sessions" class="sessions"></ul>
+  <p class="hint">Saved only in this browser, so you can pick up where you left off next time you visit.</p>
+</section>
+
+<section id="settings" class="sheet" hidden>
+  <h2>Settings</h2>
+  <label class="field">Backend address <input id="backend" type="url"></label>
+  <h3>Your profile</h3>
+  <p class="hint">Used to fill forms, only when you ask. Saved in this browser. The AI model never sees these values, only which ones you've saved. Don't save ID numbers, bank details or passwords here.</p>
+  <div id="profileFields"></div>
+  <div class="row-buttons">
+    <button id="saveSettings" type="button">Save settings</button>
+    <button id="clearHistory" class="quiet danger" type="button">Delete all saved conversations</button>
+  </div>
+</section>
+
+<main id="thread" class="thread"></main>
+
+<form id="ask" class="composer">
+  <label for="request" class="sr-only">Ask Sahay about this page</label>
+  <textarea id="request" rows="1" placeholder="Ask about this page" required></textarea>
+  <button id="go" type="submit">Ask</button>
+</form>
+
+<p id="status" class="sr-only" role="status" aria-live="polite"></p>
+
+<script src="sidepanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Sahay – Safe Web Assistant",
+  "version": "0.2.0",
+  "description": "Explains complex government, banking and education websites in plain words, and helps complete them safely, with your approval.",
+  "permissions": [
+    "sidePanel",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Sahay"
+  }
+}
